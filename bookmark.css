@@ -6,3 +6,9 @@ td{
     border: 2px solid black;
     padding: 10px;
 }
+h1{
+    color:red;
+}
+h2{
+    color: rgb(43, 15, 222);
+}
