@@ -2,3 +2,7 @@ body{
     background-color: rgb(75, 155, 150);
     color: rgb(133, 47, 47);
 }
+td{
+    border: 1px solid black;
+    padding: 10px;
+}
