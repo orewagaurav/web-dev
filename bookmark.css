@@ -12,3 +12,15 @@ h1{
 h2{
     color: rgb(43, 15, 222);
 }
+h3{
+    color:blueviolet
+}
+ul{
+    color: chartreuse;
+}
+ol{
+    color: rgb(157, 248, 0);
+}
+dl{
+    color: rgb(255, 251, 0);
+}
