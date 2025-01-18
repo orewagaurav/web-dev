@@ -24,3 +24,6 @@ ol{
 dl{
     color: rgb(255, 251, 0);
 }
+label{
+    color: red;
+}
