@@ -96,32 +96,42 @@
     <h2>Creating Forms</h2>
     <form action="post">
         <div>
-        <label for="username">Enter your username</label>
-        <input type="text" id="username" name="username" placeholder="Enter your username">
+            <label for="username">Enter your username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username">
         </div>
         <div>
-        <label for="password">Enter your password</label>
+            <label for="password">Enter your password</label>
             <input type="password" id="password" name="password" placeholder="Enter your password">
         </div>
         <div>
-            <input type ="radio" id="male" name = "gender" value="male">
-            <label for ="male">Male</label>
-            <input type="radio" id = female name ="gender" value="female">
-            <label for ="female">Female</label>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+            <input type="radio" id=female name="gender" value="female">
+            <label for="female">Female</label>
         </div>
         <div>
             <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
             <label for="vehicle1"> I have a Bike</label><br>
-            <input type="checkbox" id ="vechicle2" name="vechicle2" value ="car">
+            <input type="checkbox" id="vechicle2" name="vechicle2" value="car">
             <label for vechicle2>I have a Car</label><br>
             <input type="checkbox" id="vehicle3" name="vehicle3" value="Bicycle">
-            <label for ="vehicle3">I have a Bicycle</label>
+            <label for="vehicle3">I have a Bicycle</label>
         </div>
         <br>
         <div>
-            <label style="color:hsl(300, 86%, 44%)"; for="textarea1">Enter Your Comments Here</label>
-            <textarea name ="comments" rows="5" cols="40" id ="textarea1" placeholder="Enter your comments here"></textarea>
-
+            <label style="color:hsl(300, 86%, 44%)" ; for="textarea1">Enter Your Comments Here</label>
+            <textarea name="comments" rows="5" cols="40" id="textarea1"
+                placeholder="Enter your comments here"></textarea>
+        </div>
+        <br>
+        <div>
+            <label for="languages">Choose your fav Laguage:</label>
+            <select name="laguages" id="laguages">
+                <option value="c++">c++</option>
+                <option value="java">java</option>
+                <option value="python">python</option>
+                <option value="javascript">javascript</option>
+                <option value ="c">c</option>
         </div>
     </form>
     <h2>Creating Buttons</h2>
