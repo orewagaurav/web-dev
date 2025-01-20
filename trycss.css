@@ -1,4 +1,36 @@
-body{
-    background: #4dcee2;
-    color:antiquewhite
+/* body{
+    background: #9691b5;
+    color:rgb(151, 89, 7)
+}
+.box{
+    color:rgb(115, 28, 28);
+    background: #42a853;
+}
+.box1{
+    color:#e50d0d;
+    background:rgb(37, 145, 107);
+    padding: 20px;
+    margin: 20px;
+    border: 5px solid rgb(240, 5, 5);
+}
+.box2{
+    color:rgb(0, 0, 255);
+    background: #8e2e2e;
+    padding:20px;
+    margin:20px;
+    border: 5px solid rgb(0, 0, 255);
+    
+} */
+p{
+    font-family:'Courier New', Courier, monospace
+}
+.box1{
+    font: italic bold 20px/30px Georgia, serif;
+}
+.box2{
+    font-family:"serif";
+    font-size: 20px;
+    line-height: 30px;
+      
+
 }
