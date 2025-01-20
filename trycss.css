@@ -1,0 +1,43 @@
+body{
+    background-color: rgb(75, 155, 150);
+    color: rgb(133, 47, 47);
+}
+td{
+    border: 2px solid black;
+    padding: 1px;
+}
+h1{
+    color:red;
+}
+h2{
+    color: rgb(43, 15, 222);
+}
+h3{
+    color:blueviolet
+}
+ul{
+    color: chartreuse;
+}
+ol{
+    color: rgb(157, 248, 0);
+}
+dl{
+    color: rgb(255, 251, 0);
+}
+label{
+    color: rgba(255, 30, 0, 0.604);
+}
+div>p{
+    color: rgb(10, 242, 99);
+    background: #c40808;
+}
+/* . is used for class */
+.class1{
+    color: rgb(255, 0, 0);
+    background: #000;
+}
+/* # is used for id */
+#id1{
+    color: rgb(0, 255, 0);
+    background: #007;
+}

@@ -27,3 +27,17 @@ dl{
 label{
     color: rgba(255, 30, 0, 0.604);
 }
+div>p{
+    color: rgb(10, 242, 99);
+    background: #c40808;
+}
+/* . is used for class */
+.class1{
+    color: rgb(255, 0, 0);
+    background: #000;
+}
+/* # is used for id */
+#id1{
+    color: rgb(0, 255, 0);
+    background: #007;
+}
