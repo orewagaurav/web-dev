@@ -22,7 +22,8 @@
     
 } */
 p{
-    font-family:'Courier New', Courier, monospace
+    font-family:'Courier New', Courier, monospace;
+    font-size:20px;
 }
 .box1{
     font: italic bold 20px/30px Georgia, serif;
@@ -31,6 +32,21 @@ p{
     font-family:"serif";
     font-size: 20px;
     line-height: 30px;
-      
-
+    font-style:italic;
+}
+p2{
+    font-style:italic;
+    font-family:"cursive";
+    /* font-size: 30px; */
+    font-weight: 700;
+    font-size: 30px;
+    font-variant: small-caps;  
+    line-height:40px;
+    letter-spacing: 7px;
+}
+p3{
+    line-height:30px;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: 500;
+    font-size: 20px; 
 }
