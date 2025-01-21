@@ -33,6 +33,7 @@ p{
     font-size: 20px;
     line-height: 30px;
     font-style:italic;
+    text-transform: lowercase;
 }
 p2{
     font-style:italic;
@@ -43,10 +44,16 @@ p2{
     font-variant: small-caps;  
     line-height:40px;
     letter-spacing: 7px;
+    text-transform: uppercase;
 }
 p3{
     line-height:30px;
     font-family:'Courier New', Courier, monospace;
     font-weight: 500;
     font-size: 20px; 
+    text-transform: capitalize;
+    text-shadow: 1dvh 1dvh 1dvh rgb(184, 12, 12);
+    text-rendering: geometricPrecision;
+    text-align: center;
+    text-wrap: balance;
 }
