@@ -57,3 +57,19 @@ p3{
     text-align: center;
     text-wrap: balance;
 }
+#GhuranRam{
+    color:#ff0202;
+    background: #a4711e;
+    padding:5vw;
+    margin:5vh;
+    border:5vh solid #42a853;
+}
+.container{
+    display: flex;
+    text-transform: uppercase;
+    height: 32vh;
+    color:aqua;
+    border:#600606 5px solid;
+    background-color:rgb(9, 78, 78);
+    padding: 5vh;
+}
