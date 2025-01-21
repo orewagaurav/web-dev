@@ -72,4 +72,12 @@ p3{
     border:#600606 5px solid;
     background-color:rgb(9, 78, 78);
     padding: 5vh;
+    margin: 2vh;
+    width: 100vmin ;
+    /* font-size: 1em; */
+}
+ 
+.container p{
+    font-size:1.1rem;
+    
 }
