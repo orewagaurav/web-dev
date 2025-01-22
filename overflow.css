@@ -1,4 +1,4 @@
-.box{
+.box25{
     height: 40vh;
     width: 30vw;
     border:2px solid red;
@@ -6,6 +6,17 @@
     overflow: auto;
     margin: 20px;
     padding:2px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    /* white-space: nowrap; */
+    /* text-overflow: ellipsis; */
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+.box{
+    height: 40vh;
+    width: 60vw;
+    border:2px solid black;
+    padding: 3px;
+    margin: 5px;
 }
