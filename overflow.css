@@ -14,9 +14,43 @@
     padding: 0;
 }
 .box{
-    height: 40vh;
+    
+    height: 20vh;
     width: 60vw;
     border:2px solid black;
     padding: 3px;
     margin: 5px;
 }
+/*hey this is a comment in css*/
+
+.box1{
+    color:aqua;
+    background-color: blueviolet;
+}
+.box2{
+    position: relative;
+    top:50px;
+    left: 70px;
+    color:rgb(114, 116, 111);
+    background-color: rgb(245, 24, 231);
+}
+.box3{
+    position: relative;
+    z-index: 1px;
+    color:rgb(16, 28, 200);
+    background-color: rgb(206, 228, 10);
+}
+.box4{
+    color:rgb(173, 250, 8);
+    background-color: rgb(19, 230, 230);
+}
+.box5{color:rgb(255, 0, 140);
+    background-color: rgb(19, 11, 18);}
+
+.parent{
+    padding:10px;
+    border: 3px solid black;
+    margin:10px;
+    width:70vw;
+}
+
