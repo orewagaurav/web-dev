@@ -1,0 +1,19 @@
+.box {
+    margin: 20px;
+    border: 3px solid black;
+    padding: 10px;
+    text-shadow: 2px 2px 5px red;
+    box-shadow: 9px 8px 7px 1px rgb(10, 212, 50);
+}
+
+div>p {
+    text-shadow: 2px 2px 5px rgb(70, 28, 219);
+    outline: 5px solid blue;
+}
+
+h2 {
+    text-shadow: 2px 2px 5px rgb(70, 28, 219);
+    outline: 2px solid red;
+    outline-offset: 30px;
+    border-radius: 50px;
+}
