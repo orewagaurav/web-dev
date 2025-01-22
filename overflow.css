@@ -1,0 +1,11 @@
+.box{
+    height: 40vh;
+    width: 30vw;
+    border:2px solid red;
+    font-size: 30px;
+    overflow: auto;
+    margin: 20px;
+    padding:2px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
