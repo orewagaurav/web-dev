@@ -24,6 +24,7 @@
 /*hey this is a comment in css*/
 
 .box1{
+    position:absolute; 
     color:aqua;
     background-color: blueviolet;
 }
