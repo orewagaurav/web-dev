@@ -1,20 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="description" content="this page contains about orewagaurav">
     <title>orewagaurav</title>
-     <link rel = "stylesheet" href="style.css">
+    <link rel="stylesheet" href="main.css">
 </head>
+
 <body>
-    <h1>My Bookmarks!</h1>
-    <h2>Primary Bookmarks Gaurav using h2</h2>
-    <h3>Primary Bookmarks Gaurav using h3</h3> 
-    <h4>Primary Bookmarks Gaurav using h4</h4>
-    <h5>Primary Bookmarks Gaurav using h5</h5>
-    <h6>Primary Bookmarks Gaurav using h6</h6>
+    <h1>My Bookmarks
+        <img src="https://i.pinimg.com/originals/ce/1d/64/ce1d64dacd9661b32e550f3049075289.png" alt="Bookmarks"
+            height="25" weight="50">
+    </h1>
+    <h2>Primary Bookmarks</h2>
+    <p> <a target=_blank href="https://www.google.com">Google</a> </p>
+    <p> <a target=_blank href="https://netflix.com">Netflix</a></p>
+    <h2>Secondary Bookmarks</h2>
+    <p> <a target=_blank href="https://www.wikipedia.com">Wekipedia</a> </p>
+    <p> <a target=_blank href="https://www.github.com/orewagaurav">GitHub</a></p>
+    <h2 style="color:blueviolet;">My Image</h2>
+    <img src="image.jpg" alt="Gauravs Image" height="330">
+
+    <!-- <script src ="script.js"></script> -->
     <br>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus, sed.</p>
-     <script src = "script.js"></script>
+
+    <h2>Making Table</h2>
+    <table>
+        <caption style="color:black">Friend's Details</caption>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>DOB</th>
+            <th>Adult</th>
+            <th>Contact</th>
+        </tr>
+        <tr>
+            <td>Gaurav</td><!--colspan = "2"-->
+            <!-- <td rowspan = "2">Gaurav</td> -->
+            <td>20</td>
+            <td>07/04/2005</td>
+            <td>Yes</td>
+            <td>8539964150</td>
+        </tr>
+        <tr>
+            <td>Raunak</td>
+            <td>21</td>
+            <td>18/05/2004</td>
+            <td>Yes</td>
+            <td>6206973855</td>
+        </tr>
+        <tr>
+            <td>Priyanshu</td>
+            <td>22</td>
+            <td>27/08/2003</td>
+            <td>yes</td>
+            <td>7979923120</td>
+        </tr>
+    </table>
+    <br>
+
+    <h2>Creating Lists</h2>
+    <p>There are three types of lists:<br>1.Unorderd<br>2.Ordered<br>3.Defination List</p>
+
+    <h3>Unorderd List</h3>
+    <ul type="square">
+        <li>c</li>
+        <li>c++</li>
+        <li>java</li>
+        <li>python</li>
+        <li>html</li>
+    </ul>
+
+    <h3>Orderd List</h3>
+    <ol type="A"> <!--type="A","a","I",i"-->
+        <li>Gaurav</li>
+        <li>Raunak</li>
+        <li>priyanshu</li>
+        <li>shubham</li>
+        <li>Dheeraj</li>
+    </ol>
+
+    <H3>Defination Lists</H3>
+    <dl>
+        <dt>HTML</dt>
+        <dd>Hyper Text Markup Language</dd>
+        <dt>CSS</dt>
+        <dd>Cascading Style Sheets</dd>
+        <dt>JavaScript</dt>
+        <dd>A programming language commonly used in web development</dd>
+        <dt>HTTP</dt>
+        <dd>Hypertext Transfer Protocol</dd>
+        <dt>URL</dt>
+        <dd>Uniform Resource Locator</dd>
+    </dl>
+
+    <h2>Creating Forms</h2>
+
+    <form action="post">
+        <div>
+            <p>Just a Trial</p>
+            <label for="username">Enter your username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username">
+        </div>
+        <br>
+        <div>
+            <label for="password">Enter your password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password">
+        </div>
+        <div>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+            <input type="radio" id=female name="gender" value="female">
+            <label for="female">Female</label>
+        </div>
+        <div>
+            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+            <label for="vehicle1"> I have a Bike</label><br>
+            <input type="checkbox" id="vechicle2" name="vechicle2" value="car">
+            <label for vechicle2>I have a Car</label><br>
+            <input type="checkbox" id="vehicle3" name="vehicle3" value="Bicycle">
+            <label for="vehicle3">I have a Bicycle</label>
+        </div>
+        <br>
+        <div>
+            <label style="color:hsl(300, 86%, 44%)" ; for="textarea1">Enter Your Comments Here</label>
+            <br>
+            <textarea name="comments" rows="5" cols="40" id="textarea1"
+                placeholder="Enter your comments here"></textarea>
+        </div>
+        <br>
+        <div>
+            <label for="languages">Choose your fav Laguage:</label>
+            <select name="laguages" id="laguages">
+                <option value="c++">c++</option>
+                <option value="java">java</option>
+                <option value="python">python</option>
+                <option value="javascript">javascript</option>
+                <option value="c">c</option>
+            </select>
+        </div>
+    </form>
+
+    <h2>Linking some videos🎥</h2>
+
+    <video src="video1.mp4" controls height="530"></video>
+    <br>
+    <video src="video2.mp4" controls height="530"></video>
+    <br>
+
+    <h2>Music🎶</h2>
+    <audio src="music1.mp3" controls preload="none"></audio>
+    <br>
+    
+    
 </body>
+
 </html>
