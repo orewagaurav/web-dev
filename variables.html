@@ -4,9 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>css Variables</title>
+    <style>
+        :root{
+            --pricolor: aqua;
+            --seccolor: rgb(41, 6, 13);
+            --priColor: red;
+            --secColor: blue;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .nav{  
+            color: var(--secColor);
+            background-color:var(--priColor);
+        }
+        .container{
+            color: var(--pricolor);
+            background-color: var(--seccolor);
+        }
+    </style>
 </head>
 <body>
-    <div>
+    <div class="nav">
         <ul>
             <li>Contact</li>
             <li>About</li>
