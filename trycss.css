@@ -6,6 +6,11 @@ body{
     color:rgb(115, 28, 28);
     background: #42a853;
 }
+:root{
+    --main-bg-color: #42a853;
+    --main-text-color: #ff0202;
+    --main-border-color: #a4711e;
+}
 .box1{
     color:#e50d0d;
     background:rgb(37, 145, 107);
@@ -58,7 +63,7 @@ p3{
     text-wrap: balance;
 }
 #GhuranRam{
-    color:#ff0202;
+    color:var(--main-bg-color);
     background: #a4711e;
     padding:5vw;
     margin:5vh;
