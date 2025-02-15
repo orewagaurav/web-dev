@@ -10,7 +10,11 @@ function addMessage(message, isUser) {
     const messageDiv = document.createElement('div');
     messageDiv.classList.add('message');
     messageDiv.classList.add(isUser ? 'user-message' : 'bot-message');
-    messageDiv.textContent = message;
+    
+    // Add prefix based on who's speaking
+    const prefix = isUser ? 'Tony Stark: ' : 'JARVIS: ';
+    messageDiv.textContent = prefix + message;
+    
     chatMessages.appendChild(messageDiv);
     chatMessages.scrollTop = chatMessages.scrollHeight;
 }
@@ -20,6 +24,7 @@ function showLoading() {
     const loadingDiv = document.createElement('div');
     loadingDiv.classList.add('message', 'bot-message', 'loading');
     loadingDiv.id = 'loading-message';
+    loadingDiv.textContent = 'JARVIS is processing';
     chatMessages.appendChild(loadingDiv);
     chatMessages.scrollTop = chatMessages.scrollHeight;
 }
@@ -43,7 +48,7 @@ async function sendToGemini(message) {
             body: JSON.stringify({
                 contents: [{
                     parts: [{
-                        text: message
+                        text: message + " (Please respond as if you are JARVIS from Iron Man, addressing the user as 'sir' or 'Mr. Stark')"
                     }]
                 }]
             })
@@ -58,7 +63,7 @@ async function sendToGemini(message) {
         }
     } catch (error) {
         console.error('Error:', error);
-        return 'Sorry, I encountered an error. Please try again.';
+        return 'My apologies, sir. I seem to be experiencing technical difficulties. Shall we try again?';
     }
 }
 
@@ -80,6 +85,9 @@ async function handleSend() {
     // Remove loading indicator and add bot response
     removeLoading();
     addMessage(response, false);
+
+    // Play notification sound
+    playNotificationSound();
 }
 
 // Event listeners
@@ -91,4 +99,4 @@ userInput.addEventListener('keypress', (e) => {
 });
 
 // Initial greeting
-addMessage('Hello! I\'m Gemini. How can I help you today?', false);
+addMessage('Good evening, sir. JARVIS at your service. How may I assist you today?', false);
