@@ -1582,6 +1582,13 @@ nav {
 /* Add scroll indicators */
 .projects {
     position: relative;
+    margin-top: 4rem;
+}
+
+.projects .section-header {
+    margin-bottom: 0;
+    text-align: left;
+    padding-left: 1rem;
 }
 
 .scroll-indicator {
@@ -1673,4 +1680,129 @@ nav {
 .about-link:hover::after {
     transform: scaleX(1);
     transform-origin: left;
+}
+
+/* Enhanced About section header - Left aligned */
+.about .section-header {
+    margin-bottom: 0;
+    text-align: left;
+    padding-left: 1rem;
+}
+
+.about .section-title {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--glass-bg);
+    border-radius: 50px;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-top: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about .section-title {
+        font-size: 1rem;
+    }
+    
+    .about h2 {
+        font-size: 2rem;
+    }
+
+    .about .section-header {
+        padding-left: 0.5rem;
+    }
+}
+
+/* Style the logo link */
+.nav-logo a {
+    text-decoration: none;
+    display: block;
+}
+
+.nav-logo a:hover {
+    transform: scale(1.1);
+}
+
+/* Keep existing logo-circle styles */
+.logo-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* Match Projects header style with About section */
+.projects .section-header {
+    margin-bottom: 0;
+    text-align: left;
+    padding-left: 1rem;
+}
+
+.projects .section-title {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--glass-bg);
+    border-radius: 50px;
+}
+
+.projects h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-top: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .projects .section-title {
+        font-size: 1rem;
+    }
+    
+    .projects h2 {
+        font-size: 2rem;
+    }
+
+    .projects .section-header {
+        padding-left: 0.5rem;
+    }
+}
+
+/* Update Live Demo button style */
+.project-links .btn.primary {
+    padding: 0.7rem 1.5rem;  /* Reduced padding */
+    font-size: 0.9rem;       /* Smaller font size */
+}
+
+/* Remove arrow from Live Demo button */
+.project-links .btn.primary::after {
+    display: none;  /* Remove the arrow */
 } 
