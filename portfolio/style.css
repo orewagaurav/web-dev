@@ -1,0 +1,1676 @@
+:root {
+    --primary-color: #6366f1;
+    --secondary-color: #8b5cf6;
+    --accent-color: #f43f5e;
+    --text-color: #333;
+    --bg-color: #ffffff;
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --gradient-1: linear-gradient(45deg, #6366f1, #8b5cf6);
+    --gradient-2: linear-gradient(45deg, #f43f5e, #6366f1);
+}
+
+.dark-mode {
+    --text-color: #ffffff;
+    --bg-color: #0f172a;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 0% 0%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 100% 0%, rgba(244, 63, 94, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 100% 100%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 0% 100%, rgba(99, 102, 241, 0.1) 0%, transparent 50%);
+    z-index: -1;
+}
+
+/* Glass Effect */
+.glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.15);
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1.5rem 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background: rgba(var(--bg-color), 0.8);
+    backdrop-filter: blur(10px);
+    animation: fadeInDown 0.5s ease;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.logo-circle::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 50%;
+    background: conic-gradient(
+        from 0deg,
+        transparent 0%,
+        var(--primary-color) 20%,
+        var(--secondary-color) 40%,
+        var(--accent-color) 60%,
+        var(--primary-color) 80%,
+        transparent 100%
+    );
+    animation: rotate 3s linear infinite;
+    z-index: -1;
+}
+
+.logo-circle span {
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.logo-circle:hover {
+    transform: scale(1.1);
+}
+
+.nav-links a {
+    margin-left: 2rem;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gradient-1);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    padding: 0 10%;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+/* Fix gradient text blurring */
+.gradient-text {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    padding-top: 5px; /* Add padding to prevent top clipping */
+    display: inline-block; /* Ensure proper text rendering */
+    position: relative; /* For better text positioning */
+}
+
+/* Adjust hero heading for better text rendering */
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: fadeInUp 0.5s ease 0.2s both;
+    line-height: 1.2; /* Improve line height */
+    padding: 5px 0; /* Add padding for gradient text */
+}
+
+.title {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    animation: fadeInUp 0.5s ease 0.4s both;
+}
+
+.description {
+    animation: fadeInUp 0.5s ease 0.6s both;
+}
+
+.cta-buttons {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1.5rem;
+    animation: fadeInUp 0.5s ease 0.8s both;
+}
+
+.btn {
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn.primary {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+.btn.primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.btn.primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+}
+
+.btn.primary:hover::before {
+    left: 100%;
+}
+
+.btn.secondary {
+    background: transparent;
+    color: var(--text-color);
+    border: 2px solid transparent;
+    background: 
+        linear-gradient(var(--bg-color), var(--bg-color)) padding-box,
+        linear-gradient(45deg, var(--primary-color), var(--secondary-color)) border-box;
+}
+
+.btn.secondary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.2);
+}
+
+/* Add icons to buttons */
+.btn.primary::after {
+    content: '→';
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.btn.primary:hover::after {
+    transform: translateX(5px);
+}
+
+/* Enhanced Tech Stack Styles */
+.tech-stack {
+    margin-top: 2.5rem;
+    padding: 1.5rem;
+    background: var(--glass-bg);
+    border-radius: 15px;
+    border: 1px solid var(--glass-border);
+}
+
+.tech-stack p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.tech-stack p::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--gradient-1);
+    border-radius: 2px;
+}
+
+.tech-icons {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.tech-icons i {
+    font-size: 2.2rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.tech-icons i:hover {
+    transform: translateY(-5px);
+    filter: brightness(1.2);
+}
+
+/* Update tech icon colors */
+.tech-icons .fa-java { color: #007396; }
+.tech-icons .fa-python { color: #3776AB; }
+.tech-icons .fa-html5 { color: #E34F26; }
+.tech-icons .fa-css3-alt { color: #1572B6; }
+.tech-icons .fa-git-alt { color: #F05032; }
+.tech-icons .fa-github { color: #181717; }
+.tech-icons .fa-code { color: #A8B9CC; } /* For C programming */
+
+/* Add tooltip for better hover info */
+.tech-icons i:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8rem;
+    background: var(--glass-bg);
+    padding: 4px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+
+/* Enhanced Social Links Styles */
+.social-links-hero {
+    margin-top: 2.5rem;
+    padding: 1.5rem;
+    background: var(--glass-bg);
+    border-radius: 15px;
+    border: 1px solid var(--glass-border);
+}
+
+.social-links-hero p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.social-links-hero p::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--gradient-1);
+    border-radius: 2px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.social-icon {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    padding: 0.8rem;
+    border-radius: 50%;
+    background: var(--glass-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none !important;
+}
+
+.social-icon:hover {
+    transform: translateY(-5px);
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Specific hover colors for social icons */
+.social-icon:hover .fa-github { color: #fff; }
+.social-icon:hover .fa-linkedin { color: #fff; }
+.social-icon:hover .fa-instagram { color: #fff; }
+.social-icon:hover .fa-pinterest { color: #fff; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .tech-stack,
+    .social-links-hero {
+        padding: 1rem;
+    }
+
+    .tech-icons {
+        gap: 1.5rem;
+        justify-content: center;
+    }
+
+    .tech-icons i {
+        font-size: 2rem;
+    }
+
+    .social-icons {
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .social-icon {
+        font-size: 1.3rem;
+        padding: 0.7rem;
+    }
+}
+
+/* Social Links in Hero Section */
+.social-links-hero {
+    margin-top: 2rem;
+    animation: fadeInUp 0.5s ease 1s both;
+}
+
+.social-links-hero p {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    opacity: 0.8;
+    margin-bottom: 0.8rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+}
+
+.social-icon {
+    color: var(--text-color);
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+    position: relative;
+    text-decoration: none !important;
+}
+
+.social-icon::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: var(--glass-bg);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.3s ease;
+    z-index: -1;
+}
+
+.social-icon:hover {
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.social-icon:hover::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Add hover animations for each social icon */
+.social-icon:nth-child(1):hover { color: #333; }  /* GitHub */
+.social-icon:nth-child(2):hover { color: #0077b5; }  /* LinkedIn */
+.social-icon:nth-child(3):hover { color: #E60023; }  /* Pinterest */
+.social-icon:nth-child(4):hover { color: #E4405F; }  /* Instagram */
+.social-icon:nth-child(5):hover { color: #ea4c89; }  /* Dribbble */
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    /* Hero section mobile adjustments */
+    .hero {
+        padding: 6rem 5% 2rem;
+        min-height: auto;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+        padding: 3px 0;
+    }
+
+    .title {
+        font-size: 1.2rem;
+    }
+
+    /* Hero image mobile adjustments */
+    .hero-image {
+        width: 250px;
+        height: 250px;
+        margin: 0 auto;
+    }
+
+    .hero-image::before,
+    .hero-image::after {
+        inset: -2px;
+    }
+
+    .hero-image img {
+        border-width: 3px;
+    }
+
+    /* Tech stack mobile adjustments */
+    .tech-stack {
+        margin-top: 1.5rem;
+    }
+
+    .tech-icons {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .tech-icons i {
+        font-size: 1.5rem;
+    }
+
+    /* Social links mobile adjustments */
+    .social-links-hero {
+        margin-top: 1.5rem;
+    }
+
+    .social-icons {
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .social-icon {
+        font-size: 1.2rem;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: var(--text-color);
+        margin: 5px 0;
+        transition: transform 0.3s ease;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg-color);
+        padding: 2rem;
+        gap: 1rem;
+        animation: fadeIn 0.3s ease;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-image img {
+        height: 300px;
+    }
+    
+    .about-image img {
+        height: 300px;
+    }
+
+    .logo-circle {
+        width: 35px;
+        height: 35px;
+    }
+
+    .logo-circle span {
+        font-size: 1rem;
+    }
+}
+
+/* Add smaller screen adjustments */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .tech-icons i {
+        font-size: 1.3rem;
+    }
+
+    /* Adjust padding and margins */
+    .glass {
+        padding: 1.5rem;
+    }
+
+    .hero {
+        padding: 5rem 1rem 2rem;
+    }
+
+    /* Ensure buttons stack nicely */
+    .cta-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 200px;
+        text-align: center;
+    }
+}
+
+/* Add orientation specific styles */
+@media (max-height: 700px) and (orientation: landscape) {
+    .hero {
+        padding: 4rem 5% 2rem;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .hero-image {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* Add Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Add this to enhance scroll reveal animation */
+.glass.active {
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+/* Add these styles to your existing CSS */
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.about-image {
+    position: relative;
+    border-radius: 15px;
+}
+
+.about-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Remove these animations and effects for about image */
+.about-image::before,
+.about-image::after,
+.about-image:hover::before,
+.about-image:hover::after {
+    display: none;
+}
+
+/* Keep the hero image animations */
+.hero-image {
+    position: relative;
+    width: 400px;  /* Fixed width for perfect circle */
+    height: 400px; /* Same as width for perfect circle */
+    border-radius: 50%;
+    padding: 4px;
+    margin: 0 auto;
+}
+
+.hero-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: linear-gradient(
+        45deg,
+        var(--primary-color),
+        var(--secondary-color),
+        var(--accent-color),
+        var(--primary-color)
+    );
+    background-size: 400% 400%;
+    z-index: -1;
+    animation: borderGradient 8s ease infinite;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-image::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 50%;
+    background: inherit;
+    filter: blur(14px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -2;
+}
+
+.hero-image:hover::after {
+    opacity: 0.4;
+}
+
+.hero-image:hover::before {
+    animation: borderGradient 3s ease infinite;
+}
+
+.hero-image.glass {
+    background: transparent;
+    box-shadow: none;
+}
+
+/* Add glow effect */
+.about-image::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: inherit;
+    border-radius: 17px;
+    filter: blur(14px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -2;
+}
+
+.about-image:hover::after {
+    opacity: 0.4;
+}
+
+/* Add hover effect for project images */
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+/* Update the hero image styles with animated border */
+.hero-image {
+    position: relative;
+    width: 400px;  /* Fixed width for perfect circle */
+    height: 400px; /* Same as width for perfect circle */
+    border-radius: 50%;
+    padding: 4px;
+    margin: 0 auto;
+}
+
+.hero-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: linear-gradient(
+        45deg,
+        var(--primary-color),
+        var(--secondary-color),
+        var(--accent-color),
+        var(--primary-color)
+    );
+    background-size: 400% 400%;
+    z-index: -1;
+    animation: borderGradient 8s ease infinite;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+/* Add glow effect for hero image */
+.hero-image::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 50%;
+    background: inherit;
+    filter: blur(14px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -2;
+}
+
+.hero-image:hover::after {
+    opacity: 0.4;
+}
+
+/* Speed up animation on hover */
+.hero-image:hover::before {
+    animation: borderGradient 3s ease infinite;
+}
+
+/* Make sure the glass effect doesn't interfere with the border animation */
+.hero-image.glass {
+    background: transparent;
+    box-shadow: none;
+}
+
+/* Contact Section Styles */
+.contact {
+    padding: 6rem 10%;
+}
+
+.section-description {
+    text-align: center;
+    max-width: 600px;
+    margin: 1rem auto 3rem;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 15px;
+    background: var(--glass-bg);
+    transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+}
+
+.contact-card i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    background: var(--glass-bg);
+    padding: 1rem;
+    border-radius: 50%;
+}
+
+.contact-details h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-details p {
+    color: var(--text-color);
+    opacity: 0.8;
+    margin-bottom: 0.5rem;
+}
+
+.contact-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: gap 0.3s ease;
+    text-decoration: none !important;
+}
+
+.contact-link:hover {
+    gap: 0.8rem;
+}
+
+.contact-form {
+    padding: 2rem;
+}
+
+.contact-form h3 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 1.2rem 1rem 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.input-group label {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    opacity: 0.7;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    background: none;
+    -webkit-text-fill-color: initial;
+}
+
+.input-group input:focus ~ label,
+.input-group textarea:focus ~ label,
+.input-group input:valid ~ label,
+.input-group textarea:valid ~ label {
+    transform: translateY(-0.8rem) scale(0.8);
+    opacity: 1;
+    color: var(--primary-color);
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: var(--primary-color);
+    background: rgba(255, 255, 255, 0.07);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* Style the placeholder text color */
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+    color: transparent;
+}
+
+/* Ensure text is visible in dark mode */
+.dark-mode .input-group input,
+.dark-mode .input-group textarea {
+    color: #ffffff;
+}
+
+/* Update textarea specific styles */
+.input-group textarea {
+    min-height: 100px;
+    resize: vertical;
+    padding: 1.2rem 1rem 0.5rem;
+    line-height: 1.5;
+    background: rgba(255, 255, 255, 0.05);
+    font-family: inherit;
+}
+
+/* Ensure proper label positioning for textarea */
+.input-group textarea ~ label {
+    background: transparent;
+    transform-origin: left top;
+}
+
+.input-group textarea:focus ~ label,
+.input-group textarea:valid ~ label {
+    transform: translateY(-1.2rem) scale(0.8);
+    color: var(--primary-color);
+}
+
+/* Add some spacing after the textarea */
+.input-group textarea + .input-highlight {
+    bottom: 0;
+}
+
+.input-highlight {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1rem 2rem;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: transform 0.3s ease, background 0.3s ease;
+    box-shadow: 0 4px 15px rgba(var(--primary-color), 0.2);
+}
+
+.submit-btn:hover {
+    background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(var(--primary-color), 0.3);
+}
+
+.submit-btn i {
+    transition: transform 0.3s ease;
+}
+
+.submit-btn:hover i {
+    transform: translateX(5px);
+}
+
+/* Update the form container */
+.contact-form.glass {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(0px);
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-info {
+        order: 2;
+    }
+    
+    .contact-form {
+        order: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact {
+        padding: 4rem 5%;
+    }
+    
+    .contact-card {
+        padding: 1rem;
+    }
+    
+    .contact-card i {
+        padding: 0.8rem;
+        font-size: 1.2rem;
+    }
+
+    .hero-image {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+/* Add rotating border animation for hero image */
+.hero-image {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    padding: 4px;
+    margin: 0 auto;
+}
+
+.hero-image::before,
+.hero-image::after {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    background: conic-gradient(
+        from 0deg,
+        transparent 0%,
+        var(--primary-color) 20%,
+        var(--secondary-color) 40%,
+        var(--accent-color) 60%,
+        var(--primary-color) 80%,
+        transparent 100%
+    );
+    animation: rotate 3s linear infinite;
+}
+
+.hero-image::after {
+    animation: rotate 3s linear infinite reverse;
+    filter: blur(15px);
+    opacity: 0.3;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    position: relative;
+    z-index: 1;
+    border: 4px solid var(--bg-color);
+}
+
+/* Container for the image to create glass effect */
+.hero-image-container {
+    position: relative;
+    background: var(--bg-color);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Add rotation animation */
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Add pulse animation */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-image {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+/* Add these mobile menu styles */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: var(--text-color);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* Mobile menu active state */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile navigation styles */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        position: relative;
+        z-index: 1001;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: var(--bg-color);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        transition: 0.3s ease;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    /* Ensure content is scrollable */
+    body {
+        position: relative;
+        min-height: 100vh;
+        overflow-y: auto !important;
+    }
+
+    body.menu-open {
+        overflow: hidden;
+    }
+
+    /* Make main content scrollable */
+    main {
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Adjust section heights */
+    section {
+        min-height: auto;
+        padding: 4rem 1rem;
+    }
+
+    /* Remove any fixed positioning from content */
+    .hero-content,
+    .about-content,
+    .project-content,
+    .contact-container {
+        position: relative;
+        overflow: visible;
+    }
+
+    /* Ensure nav stays on top */
+    nav {
+        position: fixed;
+        z-index: 1001;
+        width: 100%;
+        background: var(--bg-color);
+    }
+
+    .nav-links a {
+        margin: 0;
+        font-size: 1.2rem;
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    .nav-links.active a {
+        opacity: 1;
+        transform: translateX(0);
+        transition: all 0.3s ease;
+    }
+
+    /* Add delay for each link animation */
+    .nav-links a:nth-child(1) { transition-delay: 0.1s; }
+    .nav-links a:nth-child(2) { transition-delay: 0.2s; }
+    .nav-links a:nth-child(3) { transition-delay: 0.3s; }
+    .nav-links a:nth-child(4) { transition-delay: 0.4s; }
+}
+
+/* Update overlay styles */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+    z-index: 999;
+    pointer-events: none;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* Improve mobile zoom handling */
+@media screen and (max-width: 768px) {
+    /* Adjust base font size for better zoom */
+    html {
+        font-size: 16px;
+        -webkit-text-size-adjust: 100%;
+    }
+
+    /* Improve touch targets */
+    .nav-links a,
+    .social-icon,
+    .btn,
+    .contact-link {
+        padding: 0.8rem;
+        min-height: 44px; /* Minimum touch target size */
+        min-width: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Prevent content overflow */
+    .hero-content,
+    .about-content,
+    .project-content,
+    .contact-container {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* Adjust container padding */
+    .container {
+        padding-left: max(1rem, env(safe-area-inset-left));
+        padding-right: max(1rem, env(safe-area-inset-right));
+    }
+
+    /* Improve form inputs on zoom */
+    .input-group input,
+    .input-group textarea {
+        font-size: 16px; /* Prevent auto-zoom on iOS */
+        padding: 12px;
+    }
+
+    /* Adjust spacing when zoomed */
+    .section {
+        padding: 4rem 1rem;
+        overflow-x: hidden;
+    }
+
+    /* Make images responsive when zoomed */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Improve menu accessibility when zoomed */
+    .nav-links.active {
+        width: min(70%, 300px);
+        padding: 2rem 1rem;
+    }
+}
+
+/* Add styles for extreme zoom levels */
+@media screen and (max-width: 480px) {
+    body {
+        min-width: 320px; /* Prevent layout breaking at extreme zoom */
+    }
+
+    .hero-image {
+        width: min(200px, 80vw);
+        height: min(200px, 80vw);
+    }
+
+    .tech-icons,
+    .social-icons {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.8rem;
+    }
+}
+
+/* Add support for landscape orientation */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: 5rem 1rem 2rem;
+    }
+
+    .hero-content {
+        gap: 1rem;
+    }
+
+    .hero-image {
+        width: min(150px, 30vh);
+        height: min(150px, 30vh);
+    }
+}
+
+/* Add safe area insets for notched devices */
+@supports (padding: max(0px)) {
+    .nav {
+        padding-top: max(1.5rem, env(safe-area-inset-top));
+        padding-left: max(10%, env(safe-area-inset-left));
+        padding-right: max(10%, env(safe-area-inset-right));
+    }
+}
+
+/* Social Links in Contact Section */
+.social-links {
+    display: flex;
+    gap: 1.2rem;
+    margin-top: 1rem;
+}
+
+.social-links .social-icon {
+    color: var(--text-color);
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+    position: relative;
+    background: transparent;
+    padding: 0;
+    text-decoration: none !important;
+}
+
+.social-links .social-icon::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: var(--glass-bg);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.3s ease;
+    z-index: -1;
+}
+
+.social-links .social-icon:hover {
+    transform: translateY(-3px);
+    background: transparent;
+}
+
+.social-links .social-icon:hover::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Specific hover colors for social icons in contact */
+.social-links .social-icon:hover .fa-github { color: #333; }
+.social-links .social-icon:hover .fa-linkedin { color: #0077b5; }
+.social-links .social-icon:hover .fa-instagram { color: #E4405F; }
+.social-links .social-icon:hover .fa-pinterest { color: #E60023; }
+
+/* Style the coffee icon */
+.coffee-icon {
+    color: var(--accent-color);
+    margin-left: 8px;
+    font-size: 1.1em;
+    animation: steam 2s ease-in-out infinite;
+}
+
+/* Add steam animation */
+@keyframes steam {
+    0%, 100% {
+        transform: translateY(0) rotate(5deg);
+    }
+    50% {
+        transform: translateY(-5px) rotate(-5deg);
+    }
+}
+
+/* Update project grid to horizontal format */
+.project-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 2rem;
+    padding: 1rem 0;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.project-grid::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.project-card {
+    min-width: 350px;
+    width: 350px;
+    scroll-snap-align: start;
+    flex-shrink: 0;
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 15px;
+    margin-bottom: 1.5rem;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+/* Add scroll indicators */
+.projects {
+    position: relative;
+}
+
+.scroll-indicator {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: var(--glass-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+    border: 1px solid var(--glass-border);
+    transition: all 0.3s ease;
+}
+
+.scroll-left {
+    left: 5%;
+}
+
+.scroll-right {
+    right: 5%;
+}
+
+.scroll-indicator:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .project-card {
+        min-width: 300px;
+        width: 300px;
+    }
+
+    .scroll-indicator {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* Style about section icons */
+.about-description {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.about-icon {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.about-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.about-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--gradient-1);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.about-link:hover {
+    color: var(--secondary-color);
+}
+
+.about-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+} 
