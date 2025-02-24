@@ -224,24 +224,3 @@ body {
     color: #00ff2a;
     text-shadow: 0 0 5px rgba(0, 255, 42, 0.3);
 }
-
-.social-links {
-    display: flex;
-    gap: 15px;
-}
-
-.social-links a {
-    color: #00ff2a;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.social-links a:hover {
-    color: #fff;
-    text-shadow: 0 0 10px rgba(0, 255, 42, 0.5);
-    transform: translateY(-2px);
-}
-
-.social-links i {
-    font-size: 1.2rem;
-}
