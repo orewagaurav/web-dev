@@ -1,0 +1,13 @@
+h1{
+    margin-top:10px;
+    color: rgb(94, 147, 61);
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    text-decoration: underline;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-overflow: ellipsis;
+    text-wrap: balance;
+}
