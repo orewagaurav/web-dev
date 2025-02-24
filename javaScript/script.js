@@ -1,2 +1,5 @@
 alert("Hello World");
 console.log("code is running");
+console.error("this is an error");
+var a =prompt("Enter your name");
+console.log("Your number is"+a);
