@@ -61,17 +61,17 @@ console.log(typeof num,typeof str,typeof bool,typeof nullVar,typeof undefinedVar
 //function
 
 //object
-let person={
+let obj={
     name:"Gaurav",
     age:20,
     "student id":4672,//it involves space so we use ""
     isStudent:true
 }
-console.log(person);
+console.log(obj);
 
-person.salary=88000
-person["student id"]=4678;
-person.isStudent=false;
-person.name="Raj";
-person.age=21;
-console.log(person);
+obj.salary=88000
+obj["student id"]=4678;
+obj.isStudent=false;
+obj.name="Raj";
+obj.age=21;
+console.log(obj);
