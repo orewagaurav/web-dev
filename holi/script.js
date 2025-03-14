@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const colors = document.querySelector('.colors');
     const colorPalette = ['#FF1744', '#2979FF', '#00E676', '#FFEA00', '#FF9100', '#D500F9'];
+    const waterDrops = document.querySelector('.water-drops');
 
     function createColorDot() {
         const dot = document.createElement('span');
@@ -17,8 +18,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 6000);
     }
 
+    function createWaterDrop() {
+        const drop = document.createElement('div');
+        drop.className = 'water-drop';
+        drop.style.left = Math.random() * 100 + '%';
+        drop.style.animationDuration = (Math.random() * 1 + 1) + 's';
+        waterDrops.appendChild(drop);
+
+        setTimeout(() => {
+            drop.remove();
+        }, 2000);
+    }
+
     // Create initial color dots
     setInterval(createColorDot, 300);
+    setInterval(createWaterDrop, 500);
 
     // Add interactive elements
     document.addEventListener('mousemove', (e) => {
@@ -55,5 +69,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 dot.remove();
             }, 6000);
         }
+    });
+
+    // Add parallax effect to floating icons
+    document.addEventListener('mousemove', (e) => {
+        const icons = document.querySelectorAll('.floating-icon');
+        const mouseX = e.clientX / window.innerWidth;
+        const mouseY = e.clientY / window.innerHeight;
+
+        icons.forEach((icon, index) => {
+            const speed = 0.1 + (index * 0.05);
+            const x = (mouseX - 0.5) * 50 * speed;
+            const y = (mouseY - 0.5) * 50 * speed;
+            icon.style.transform = `translate(${x}px, ${y}px)`;
+        });
     });
 }); 
