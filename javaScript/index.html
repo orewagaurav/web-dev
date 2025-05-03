@@ -2,48 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introduction to javaScript</title>
-    <link rel="stylesheet" href="styles.css"
+    <meta name="viewport" content="width=<src>, initial-scale=1.0">
+    <title>Events</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            background-color: red;
+            color: white;
+            border-radius: 10px;
+            margin-top: 20px;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            padding: 10px;
+        
+        }
+        .button{
+            margin-top: 20px;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            padding: 10px;
+            
+            
+        }
+    </style>
 </head>
 <body>
-    <h1>Introduction to javaScript</h1>
-    <div class="skills">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" height="35" alt="C logo" />
-        <img width="12" />
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" height="35" alt="Java logo" />
-        <img width="12" />
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="35" alt="Python logo" />
-        <img width="12" />
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="35" alt="HTML5 logo" />
-        <img width="12" />
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="35" alt="CSS3 logo" />
-        <img width="12" />
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" height="35" alt="Git logo" />
-        <img width="12" />
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" height="35" alt="GitHub logo" />
-        <img width="12" />
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" height="35" alt="VS Code logo" />
-        <img width="12" />
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" height="35" alt="MySQL logo" />
+    <div id="test"></div>
+    <div class="container">
+        <div class="box">Hey I am a Box</div>
     </div>
-    <div style="display: flex; flex-wrap: wrap; gap: 8px; align-content:center;">
-        <img src="https://img.shields.io/badge/C-00599C?style=flat&logo=c&logoColor=white" alt="C" />
-        <img src="https://img.shields.io/badge/Java-007396?style=flat&logo=openjdk&logoColor=white" alt="Java" />
-        <img src="https://img.shields.io/badge/Python-3572A5?style=flat&logo=python&logoColor=white" alt="Python" />
-        <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black" alt="JavaScript" />
-        <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white" alt="HTML5" />
-        <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white" alt="CSS3" />
-        <img src="https://img.shields.io/badge/Git-F05032?style=flat&logo=git&logoColor=white" alt="Git" />
-        <img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white" alt="GitHub" />
-        <img src="https://img.shields.io/badge/VS_Code-0078D4?style=flat&logo=visualstudiocode&logoColor=white" alt="VS Code" />
-        <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=mysql&logoColor=white" alt="MySQL" />
-        <img src="https://img.shields.io/badge/Figma-05A6F0?style=flat&logo=figma&logoColor=white" alt="Figma" />
-        <img src="https://img.shields.io/badge/Canva-00C4CC?style=flat&logo=canva&logoColor=white" alt="Canva" />
-        <img src="https://img.shields.io/badge/Vercel-000000?style=flat&logo=vercel&logoColor=white" alt="Vercel" />
-        <img src="https://img.shields.io/badge/MacOS-000000?style=flat&logo=apple&logoColor=white" alt="MacOS" />
+    <div class="button">
+    <button id="btn">Click</button>
+    <button id ="btn2">dblclick</button>
+    <button id="btn3">mouseover</button>
     </div>
-    
+    <script src="events.js"></script>
 </body>
-<script src="new.js"></script>
 </html>
