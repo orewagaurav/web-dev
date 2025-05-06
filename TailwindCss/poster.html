@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Furniture Shop Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#2E3B55] flex items-center justify-center min-h-screen">
+
+  <div class="relative bg-white w-[320px] h-[600px] rounded-3xl overflow-hidden shadow-lg">
+    
+    <!-- Top decorative shape -->
+    <div class="absolute top-0 left-0 w-40 h-40 bg-[#91A8A4] rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+    
+    <!-- Bottom decorative shape -->
+    <div class="absolute bottom-0 right-0 w-40 h-40 bg-[#91A8A4] rounded-full translate-x-1/2 translate-y-1/2"></div>
+
+    <!-- Center Circle -->
+    <div class="absolute top-[26%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#91A8A4] rounded-full flex flex-col items-center justify-center text-white text-center p-4">
+      <!-- Sofa Icon (placeholder with SVG) -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 13h18M4 6h16a1 1 0 011 1v11a1 1 0 01-1 1h-2v-3H6v3H4a1 1 0 01-1-1V7a1 1 0 011-1z"/>
+      </svg>
+      <h1 class="text-lg font-semibold tracking-wide">FURNITURE</h1>
+      <p class="text-sm font-medium tracking-wide">SHOP</p>
+    </div>
+
+    <!-- Small decorative dots -->
+    <div class="absolute top-[20%] right-[20%] w-3 h-3 bg-[#91A8A4] rounded-full"></div>
+    <div class="absolute bottom-[20%] left-[20%] w-3 h-3 bg-[#91A8A4] rounded-full"></div>
+
+    <!-- Hamburger Menu -->
+    <div class="absolute top-5 right-5 space-y-1">
+      <span class="block w-6 h-0.5 bg-[#91A8A4]"></span>
+      <span class="block w-6 h-0.5 bg-[red]"></span>
+      <span class="block w-6 h-0.5 bg-[#91A8A4]"></span>
+    </div>
+
+    <!-- Login Section -->
+    <div class="absolute bottom-24 left-0 w-full flex flex-col items-center px-6">
+      <input type="text" placeholder="your account" class="w-full p-2 rounded-full border border-gray-300 text-center mb-4" />
+      <button class="w-full bg-[#91A8A4] text-white py-2 rounded-full">LOG IN</button>
+    </div>
+
+    <!-- Create account link -->
+    <p class="absolute bottom-10 w-full text-center text-[#91A8A4] text-sm">Create an account</p>
+  </div>
+
+</body>
+</html>
