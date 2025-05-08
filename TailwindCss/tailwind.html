@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-slate-900">
+    <!-- block pura row occupy krta hai -->
+    <!-- inline me jitna content hai utna ki space occupy krta hai -->
+    <!-- inline-block krne se element to inline hi rhta pr h,w apply hone lgte hai jo ki kwal inline me nai hote hai -->
+    <span class="block bg-blue-300 w-32">Block Span</span>
+    <span class="inline bg-green-300 w-32">Inline Span</span>
+    <span class="inline-block bg-green-300 w-32">Inline Span</span>
+
+    <div class="box box-border border-4 p-4 bg-blue-200">
+      Box with padding and border included in size
+    </div>
+    <div class="box box-content border-4 p-4 bg-green-200">
+      Box with size excluding padding and border
+    </div>
+    
+    <div class="flex justify-center items-center h-screen">
+      <div class="bg-blue-500 text-white p-4 m-2">Box 1</div>
+      <div class="bg-green-500 text-white p-4 m-2">Box 2</div>
+      <div class="bg-red-500 text-white p-4 m-2">Box 3</div>
+    </div>
+
+    <div class="grid grid-cols-3 gap-4">
+        <div class="bg-red-500">1</div>
+        <div class="bg-green-500">2</div>
+        <div class="bg-blue-500">3</div>
+    </div>
+
+    <div class="mt-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div class="bg-pink-500 h-20 mb-5">Card 1</div>
+        <div class="bg-purple-500 h-20 mb-5">Card 2</div>
+        <div class="bg-yellow-500 h-20 mb-5">Card 3</div>
+      </div>
+
+
+  </body>
+</html>
